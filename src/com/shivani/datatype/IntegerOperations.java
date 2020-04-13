@@ -4,21 +4,21 @@ import com.shivani.exceptions.DivisionException;
 import com.shivani.interfaces.Calculator;
 import com.shivani.services.ValueAssign;
 
-public class IntegerOperations  {
-	public int addition(ValueAssign<Integer> p) {		
-		return p.getFirstOperand() + p.getSecondOperand();
+public class IntegerOperations implements Calculator<Integer>{
+	public Integer addition(ValueAssign<Integer> value) {		
+		return value.getFirstOperand() + value.getSecondOperand();
 	}
-	public int subtraction(ValueAssign<Integer> p) {
-		return p.getFirstOperand() - p.getSecondOperand();
+	public Integer subtraction(ValueAssign<Integer> value) {
+		return value.getFirstOperand() - value.getSecondOperand();
 	}
-	public int multiplication(ValueAssign<Integer> p) {
-		return p.getFirstOperand() * p.getSecondOperand();
+	public Integer multiplication(ValueAssign<Integer> value) {
+		return value.getFirstOperand() * value.getSecondOperand();
 	}
-	public int division(ValueAssign<Integer> p) {
-		if(p.getSecondOperand()==0) {
+	public Integer division(ValueAssign<Integer> value) {
+		if(value.getSecondOperand()==0) {
 			throw new DivisionException("Entered value is zero, Division is not possible");
 		}
-		return p.getFirstOperand() / p.getSecondOperand();
+		return value.getFirstOperand() / value.getSecondOperand();
 	}
 	
 }

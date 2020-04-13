@@ -1,20 +1,21 @@
 package com.shivani.datatype;
 import com.shivani.exceptions.DivisionException;
+import com.shivani.interfaces.Calculator;
 import com.shivani.services.ValueAssign;
-public class DoubleOperations {
-	public double addition(ValueAssign<Double> p) {
-		return p.getFirstOperand() +p.getSecondOperand();
+public class DoubleOperations implements Calculator<Double> {
+	public Double addition(ValueAssign<Double> value) {
+		return value.getFirstOperand() +value.getSecondOperand();
 	}
-	public double subtraction(ValueAssign<Double> p) {
-		return p.getFirstOperand() - p.getSecondOperand();
+	public Double subtraction(ValueAssign<Double> value) {
+		return value.getFirstOperand() - value.getSecondOperand();
 	}
-	public double multiplication(ValueAssign<Double> p) {
-		return p.getFirstOperand() * p.getSecondOperand();
+	public Double multiplication(ValueAssign<Double> value) {
+		return value.getFirstOperand() * value.getSecondOperand();
 	}
-	public double division(ValueAssign<Double> p) {
-		if(p.getSecondOperand()==0.0) {
+	public Double division(ValueAssign<Double> value) {
+		if(value.getSecondOperand()== 0.0) {
 			throw new DivisionException("Entered value is 0.0, Division is not possible");
 		}
-		 return p.getFirstOperand() / p.getSecondOperand();
+		 return value.getFirstOperand() / value.getSecondOperand();
 	}
 }

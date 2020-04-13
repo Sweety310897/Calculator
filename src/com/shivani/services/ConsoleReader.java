@@ -3,14 +3,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import com.shivani.datatype.DoubleOperations;
 import com.shivani.datatype.FloatOperations;
 import com.shivani.datatype.IntegerOperations;
 import com.shivani.exceptions.DivisionException;
 import com.shivani.exceptions.NumberValidationException;
+import com.shivani.exceptions.OperatorException;
 import com.shivani.interfaces.InputReader;
 public class ConsoleReader implements InputReader {
 	Scanner scan = new Scanner(System.in);
@@ -57,7 +56,7 @@ public class ConsoleReader implements InputReader {
     	 
     		break;
         }
-		} catch(DivisionException | NumberValidationException message) {
+		} catch(DivisionException | NumberValidationException | OperatorException message) {
 			logger.log(Level.INFO, message.getMessage());
         	
 		}
